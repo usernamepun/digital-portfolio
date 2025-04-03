@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Digital Portfolio</title>
+    <link rel="stylesheet" href="port.css">
+</head>
+<body>
+    <header>
+        <h1>My Digital Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">My Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="photo-container">
+            <img id="profile-pic" src="https://i.ibb.co/cKbxtkCv/IMG-20250308-084204-190.webp" alt="IMG-20250308-084204-190" border="0">
+        </div>
+        <p>Hello! I am s.punitha, a passionate bsc(cs) student. Welcome to my portfolio.</p>
+    </section>
+    <section id="projects">
+        <h2>My Projects</h2>
+        <ul>
+            <li><strong>Project 1:</strong> About Me</li>
+            <li><strong>Project 2:</strong> My Projects</li>
+            <li><strong>Project 3:</strong> Resume</li>
+        </ul>
+    </section>
+    <section id="resume">
+        <h2>Resume</h2>
+<input type="file" id="upload" />
+<a id="download" style="display: none;">Download File</a>
+
+<script>
+    document.getElementById('upload').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const url = URL.createObjectURL(file);
+            const downloadLink = document.getElementById('download');
+            downloadLink.href = url;
+            downloadLink.download = file.name;
+            downloadLink.textContent = "Download " + file.name;
+            downloadLink.style.display = "block";
+        }
+    });
+</script>
+</body>
+</html>
